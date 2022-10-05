@@ -208,6 +208,35 @@ This is how it looks in the browser:
 
 > The cursor is not shown in the screenshot but the message was shown when the user hover pointer over the link.
 
+Do you want to create an image that links to another site?, then use an `img` element as the content of an `a` element:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>image link</title>
+  </head>
+  <body>
+    <a
+      href="https://www.facebook.com/"
+      title="click here to open facebook"
+      target="_blank"
+    >
+      <img
+        src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/facebook_circle_color-512.png"
+        alt="facebook icon"
+      />
+    </a>
+  </body>
+</html>
+```
+
+> See example above at [codes/image_link.html](./codes/image_link.html)
+
+This is how it looks in the browser:
+
+![body_tag.png](./media/image_link.png)
+
 ## More about images
 
 We already saw that `img` element is used to add an image to the document.
@@ -290,3 +319,98 @@ Notes:
 - You can add multiple styles by separating each style using a semicolon `;`.
 - A single style can have multiple values, as the `font-family`in this case you can separate each value using a comma `,`.
 - The `font-family` style will use the first font listed, if it is not available it will try with the next and will continue to do that until one font is found for use.
+
+## Display property values
+
+All display elements (elements that are rendered in the user interface) have a default behavior to be shown in the browser.
+
+The display property (`style="display: <VALUE HERE>"`) specifies how and element takes place in the view.
+
+Every element is treated as a box, the display property specifies how this box will be shown.
+
+The most common values for the `display`property are:
+
+- block
+- inline-block
+- table
+- flex
+- grid
+- none
+
+### Block-level elements
+
+Some elements use `block` as the default value for the `display` property, e.g. `h1`to `h6`, `p`, `div`, etc.
+
+The `div` element is a generic container, you can use it for any generic text.
+
+It is a `block` element just as the `p` element.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Block elements</title>
+  </head>
+  <body>
+    <div style="background: red">Hello</div>
+    <p style="background: green">Good bye</p>
+  </body>
+</html>
+```
+
+> See example above at [codes/block_elements.html](./codes/block_elements.html)
+
+This is how it looks in the browser:
+
+![body_tag.png](./media/block_elements.png)
+
+> In the example above the `background` color of each element was changed to see their shape.
+
+As you can see, `block` elements stretches 100% wide, start a new line and stacks vertically.
+
+## In-line elements
+
+Inline elements takes width as per requirement and do not start/end with a new line.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Block elements</title>
+  </head>
+  <body>
+    <div style="background: red">Hello <b>world</b> how are you</div>
+
+    <div style="background: green">
+      Hello <b style="background: blue">world</b> how are you
+    </div>
+  </body>
+</html>
+```
+
+> See example above at [codes/inline_elements.html](./codes/inline_elements.html)
+
+This is how it looks in the browser:
+
+![body_tag.png](./media/inline_elements.png)
+
+As you can see the `b` element specifies bold text, this element is an inline-block element, you can see in the green div how its box only takes the required width and it do not start or end with a new line.
+
+> Also note that we are inserting an inline-block element inside a block element, this means that a block element can hold both inline-block and block elements.
+
+Here is a list of other inline-block elements:
+
+- a
+- img
+- input
+- code
+- label
+- span
+- small
+- br
