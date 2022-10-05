@@ -176,7 +176,7 @@ This element can have a few attributes:
 
 - `href`: (optional, but makes no sense to use the `a` element if you are not going to redirect at all) The link where we want to redirect the user.
 - `title`: (optional) an small message the user will se when hovering the pointer over the link.
-- `target`: (optional) specifies where to open the link, values:
+- `target`: (optional) specifies where to open the link, options (Do not worry if you do nto understand all the options yet):
     - `_blank`: Opens the linked document in a new window or tab
     - `_self`: Opens the linked document in the same frame as it was clicked (this is default)
     - `_parent`: Opens the linked document in the parent frame
@@ -207,3 +207,86 @@ This is how it looks in the browser:
 ![body_tag.png](./media/more_about_anchor.png)
 
 > The cursor is not shown in the screenshot but the message was shown when the user hover pointer over the link.
+
+## More about images
+
+We already saw that `img` element is used to add an image to the document.
+
+These are some common attributes:
+
+- `src`: Link to the image. If your image is local you can specify the path to the image e.g. `<img>`
+- `alt`: An alternative name in case the `src` was not a valid address/link/path, also this value is used if the user is using a screen reader.
+- `title`: title that will appear when the user hovers the pointer over the image.
+- `width`: width of the image in pixels, example `width="200"` (this will be 200 pixels).
+- `height`: height of the image in pixels, example `height="300"` (this will be 300 pixels).
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      src="../media/cat.png"
+      alt="cute cat"
+      title="a nice cat"
+    />
+  </body>
+</html>
+```
+
+> See example above at [codes/more_about_anchor.html](./codes/images.html)
+
+This is how it looks in the browser:
+
+![body_tag.png](./media/images.png)
+
+## Style attribute
+
+The `style` attribute is used to add styles to HTML elements, that can be color, font, size, etc.
+
+The `style`attribute is also know as **inline CSS**, because you are modifying the styles of the element in the element itself.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>style attribute</title>
+  </head>
+  <body>
+    <img
+      src="../media/cat.png"
+      alt="cute cat"
+      title="a nice cat"
+      style="width: 30px; height: 50px"
+    />
+    <p style="color: red">Hey look I'm red</p>
+    <p style="color: #f00">Hey look I'm also red</p>
+    <p style="font-family: 'Courier', 'Lucida Sans'; color: blue">
+      I have a different font
+    </p>
+    <p style="font-size: 50px">I am big</p>
+  </body>
+</html>
+```
+
+> See example above at [codes/style_attribute.html](./codes/style_attribute.html)
+
+This is how it looks in the browser:
+
+![body_tag.png](./media/style_attribute.png)
+
+Notes:
+- For `width` and `height` **styles** you need to provide the measurement `px` unlike the `width` and `height` **attributes** which are always in pixels.
+- You can add multiple styles by separating each style using a semicolon `;`.
+- A single style can have multiple values, as the `font-family`in this case you can separate each value using a comma `,`.
+- The `font-family` style will use the first font listed, if it is not available it will try with the next and will continue to do that until one font is found for use.
