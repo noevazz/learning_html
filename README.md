@@ -538,3 +538,13 @@ Example:
   </body>
 </html>
 ```
+
+## HTML Formatting
+
+HTML provides the ability to format text without using CSS (Cascading Style Sheet).
+
+HTML has several tags that you can use to format the text.
+
+### Categories
+
+- Physical 
