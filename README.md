@@ -414,3 +414,127 @@ Here is a list of other inline-block elements:
 - span
 - small
 - br
+
+## Bookmarks
+
+Bookmarks allows the user to jump into specific parts of a web page.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bookmarks</title>
+  </head>
+  <body>
+    <h1>Index</h1>
+    <a href="#section_1">Section1</a>
+    <a href="#section_2">Section2</a>
+    <a href="#section_3">Section3</a>
+    <hr />
+
+    <a name="section_1">Section 1</a>
+    <div style="width: 200px">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates odio
+      minus reiciendis ipsum, vel eligendi nihil corporis doloribus in fuga.
+      Iure tempore minima laudantium labore accusamus dicta id, maiores nemo.
+    </div>
+
+    <br />
+    <a name="section_2">Section 2</a>
+    <div style="width: 200px">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates odio
+      minus reiciendis ipsum, vel eligendi nihil corporis doloribus in fuga.
+      Iure tempore minima laudantium labore accusamus dicta id, maiores nemo.
+    </div>
+
+    <br />
+    <a name="section_3">Section 3</a>
+    <div style="width: 200px">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates odio
+      minus reiciendis ipsum, vel eligendi nihil corporis doloribus in fuga.
+      Iure tempore minima laudantium labore accusamus dicta id, maiores nemo.
+    </div>
+  </body>
+</html>
+```
+> See example above at [codes/bookmarks.html](./codes/bookmarks.html)
+
+This is how it looks in the browser:
+
+![body_tag.png](./media/bookmarks.png)
+
+> In the screenshot above the pointer was over link Section_3, note the link at the bottom of the page `file:///home/noe/Documentos/repos/learning_html/codes/bookmarks.html#section_3`
+
+In this example we are creating `a` elements which `href` is `#`+`<name of the element>`
+
+***IMPORTANT***: If you want to use a different element for each section then you need to use the attribute `id` instead of `name`:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bookmarks</title>
+  </head>
+  <body>
+    <h1>Index</h1>
+    <a href="#section_1">Section1</a>
+    <a href="#section_2">Section2</a>
+    <a href="#section_3">Section3</a>
+    <hr />
+
+    <div id="section_1">Section 1</div>
+    <div style="width: 200px">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates odio
+      minus reiciendis ipsum, vel eligendi nihil corporis doloribus in fuga.
+      Iure tempore minima laudantium labore accusamus dicta id, maiores nemo.
+    </div>
+
+    <br />
+    <div id="section_2">Section 2</div>
+    <div style="width: 200px">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates odio
+      minus reiciendis ipsum, vel eligendi nihil corporis doloribus in fuga.
+      Iure tempore minima laudantium labore accusamus dicta id, maiores nemo.
+    </div>
+
+    <br />
+    <diva id="section_3">Section 3</div>
+    <div style="width: 200px">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates odio
+      minus reiciendis ipsum, vel eligendi nihil corporis doloribus in fuga.
+      Iure tempore minima laudantium labore accusamus dicta id, maiores nemo.
+    </div>
+  </body>
+</html>
+```
+
+> See example above at [codes/bookmarks2.html](./codes/bookmarks2.html)
+
+## Comments
+
+Comments are a way to insert text in our HTML documents for our own reference, the browser will ignore comments at all and they will not be rendered, they are useful just for us.
+
+Syntax:
+
+```html
+<!-- your comment goes here -->
+```
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Comments</title>
+  </head>
+  <body>
+    <!-- Add a comment here, maybe say something important -->
+    <h1>Title</h1>
+    <!-- Example: h1 elements are for headings -->
+  </body>
+</html>
+```
