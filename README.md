@@ -319,6 +319,12 @@ Notes:
 - You can add multiple styles by separating each style using a semicolon `;`.
 - A single style can have multiple values, as the `font-family`in this case you can separate each value using a comma `,`.
 - The `font-family` style will use the first font listed, if it is not available it will try with the next and will continue to do that until one font is found for use.
+- The `color` property receives a hexadecimal value (#F00 is the same as red because the first hex value is R (red), the second digit is G (green) and the last value is B (blue)) or a common color name such as red or blue, read more at [https://htmlcolorcodes.com/color-names/](https://htmlcolorcodes.com/color-names/)
+
+Here are another common styles you can apply:
+
+- `font-size`: Font size, the value is a number along with the measure (px for pixels), the number and the measure should be together without spaces between them.
+- `text-align`: specifies the horizontal alignment, options: `left`, `right`, ``center
 
 ## Display property values
 
@@ -558,7 +564,8 @@ Here are some common tags:
 - `<em>`: Emphasized text. The content inside is typically displayed in italic. A screen reader will pronounce the words in with an emphasis, using verbal stress.
 - `<mark>`: Marked or highlighted text
 - `<small>`: Smaller text like copyright and other side-comments.
-- `<del>`: Deleted text. Browsers will usually strike a line through deleted text:
+- `<del>`: Deleted text. Browsers will usually strike a line through deleted text
+- `<ul>`: Underlined text.
 - `<ins>`: Defines a text that has been inserted into a document. Browsers will usually underline inserted text.
 - `<sub>`: Subscript text appears half a character below the normal line, and is sometimes rendered in a smaller font
 - `<sup>`: Superscript text appears half a character above the normal line, and is sometimes rendered in a smaller font.
@@ -595,7 +602,10 @@ Example:
             <del>sample text using del tag</del>
         </div>
         <div>
-            sample text using <ins>small</ins> tag
+            sample text using <u>u tag</u>
+        </div>
+        <div>
+            sample text using <ins>ins</ins> tag
         </div>
         <div>
             sample text using sub tag: H<sub>2</sub>0
@@ -612,3 +622,8 @@ Example:
 This is how it looks in the browser:
 
 ![body_tag.png](./media/formatting.png)
+
+## Quotation tags
+
+- `<blockquote>`: Used to define a block of text which is quoted from another source.
+- `q`: used to insert short or inline quotes.
