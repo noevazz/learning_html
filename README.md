@@ -627,3 +627,153 @@ This is how it looks in the browser:
 
 - `<blockquote>`: Used to define a block of text which is quoted from another source.
 - `q`: used to insert short or inline quotes.
+
+Example
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quotation</title>
+</head>
+<body>
+    <h2>Here is an amazing quote:</h2>
+    <blockquote cite="https://www.goodreads.com/quotes">
+        <p>You only live once, but if you do it right, once is enough.</p>
+        <p><i>Mae West</i></p>
+    </blockquote>
+    
+    <h2>Here is a popular phrase</h2>
+    <p><q>Easy come, easy go</q>, This phrase is also in the song bohemian rhapsody.</p>
+</body>
+</html>
+```
+
+> See example above at [codes/quotation.html](./codes/quotation.html)
+
+This is how it looks in the browser:
+
+![body_tag.png](./media/quotation.png)
+
+Notes:
+
+- The `cite` attribute specifies the source of a quotation. It's a good habit to always add the source of a quotation, if any. The cite attribute does not render as anything special in any of the major browsers, but it can be used by search engines to get more information about the quotation.
+
+### Abbr tag
+
+`abbr` tag is used for acronyms or abbreviations. The content of this tag renders with dotted underline in some browser.
+
+You can use the `title` attribute to show the full name when hovers over the content.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>abbr</title>
+  </head>
+  <body>
+    <abbr title="HyperText Markup Language">HTML</abbr>
+  </body>
+</html>
+```
+
+> See example above at [codes/abbr.html](./codes/abbr.html)
+
+This is how it looks in the browser:
+
+![body_tag.png](./media/abbr.png)
+
+### Address tag
+
+Defines contact information for the author/owner.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <address>
+      Written by Noe Vaz <br />
+      noevaz.com <br />
+      Mexico City <br />
+    </address>
+  </body>
+</html>
+```
+
+> See example above at [codes/address.html](./codes/address.html)
+
+This is how it looks in the browser:
+
+![body_tag.png](./media/address.png)
+
+### Cite tag
+
+Defines the title of a creative work, e.g. a book a poem, a song, a movie, a painting, a sculpture.
+
+The content of this tag is usually rendered in itallic.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>cite</title>
+  </head>
+  <body>
+    <h2>Here is a popular phrase</h2>
+    <p>
+      <q>Easy come, easy go</q>, This phrase is also in the song
+      <cite>bohemian rhapsody</cite>.
+    </p>
+  </body>
+</html>
+```
+
+> See example above at [codes/cite.html](./codes/cite.html)
+
+This is how it looks in the browser:
+
+![body_tag.png](./media/cite.png)
+
+### bdo tag
+
+`bdo` stands for bi-directional override. It is used to override the current text direction.
+
+Use the `dir` attribute to set the direction, options:
+
+- `rtl`: right to left.
+- `ltr`: left to right.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BDO</title>
+</head>
+<body>
+    <p>What is the Pythagorean theorem in simple terms?</p>
+    <p>Answer: <bdo dir="rtl">the sum of the squares on the legs of a right triangle is equal to the square on the hypotenuse</bdo></p>
+</body>
+</html>
+```
+
+> See example above at [codes/bdo.html](./codes/bdo.html)
+
+This is how it looks in the browser:
+
+![body_tag.png](./media/bdo.png)
