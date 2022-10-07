@@ -547,4 +547,68 @@ HTML has several tags that you can use to format the text.
 
 ### Categories
 
-- Physical 
+- **Physical tags**: Provide a visual appearance to the text.
+- **Logical tags**: Add logical or semantic value to the text.
+
+Here are some common tags:
+
+- `<b>`: Bold text without any extra importance.
+- `<strong>`: Important text with strong importance. The content is displayed in bold.
+- `<i>`: Italic text. Often used to indicate a technical term, a phrase from another language, a thought, a ship name, etc.
+- `<em>`: Emphasized text. The content inside is typically displayed in italic. A screen reader will pronounce the words in with an emphasis, using verbal stress.
+- `<mark>`: Marked or highlighted text
+- `<small>`: Smaller text like copyright and other side-comments.
+- `<del>`: Deleted text. Browsers will usually strike a line through deleted text:
+- `<ins>`: Defines a text that has been inserted into a document. Browsers will usually underline inserted text.
+- `<sub>`: Subscript text appears half a character below the normal line, and is sometimes rendered in a smaller font
+- `<sup>`: Superscript text appears half a character above the normal line, and is sometimes rendered in a smaller font.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>formatting</title>
+    </head>
+    <body>
+        <div>
+            <b>sample text using b tag</b>
+        </div>
+        <div>
+            <strong>sample text using strong tag</strong>
+        </div>
+        <div>
+            <i>sample text using i tag</i>
+        </div>
+        <div>
+            <em>sample text using em tag</em>
+        </div>
+        <div>
+            <mark>sample text using mark tag</mark>
+        </div>
+        <div>
+            sample text using <small>small</small> tag
+        </div>
+        <div>
+            <del>sample text using del tag</del>
+        </div>
+        <div>
+            sample text using <ins>small</ins> tag
+        </div>
+        <div>
+            sample text using sub tag: H<sub>2</sub>0
+        </div>
+        <div>
+            sample text using sup tag: 2E<sup>6</sup>
+        </div>
+    </body>
+</html>
+```
+
+> See example above at [codes/bookmarks.html](./codes/formatting.html)
+
+This is how it looks in the browser:
+
+![body_tag.png](./media/formatting.png)
