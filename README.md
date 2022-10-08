@@ -545,6 +545,10 @@ Example:
 </html>
 ```
 
+You can also use comments to "disable" a line of HTML, maybe you want to test how your page looks without it but do not want to delete the line, or maybe you are resolving a bug and you may want to see how the page behaves without a line.
+
+> For CSS the `/* comment here */` comment syntax is used for both single and multiline comments. There is no other way to specify comments in CSS.
+
 ## HTML Formatting
 
 HTML provides the ability to format text without using CSS (Cascading Style Sheet).
@@ -777,3 +781,206 @@ Example:
 This is how it looks in the browser:
 
 ![body_tag.png](./media/bdo.png)
+
+## More about colors
+
+Some attributes recieve a color as the value, there are a variety of way to specify colors with RGB, HEX, HSL, RGBA or HSLA values.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>colors</title>
+  </head>
+  <body>
+    <h1 style="color: tomato;
+    border: 8px solid royalblue;
+    text-align: center">
+      Hello Tomato world
+    </h1>
+  </body>
+</html>
+```
+
+> See example above at [codes/colors.html](./codes/colors.html)
+
+This is how it looks in the browser:
+
+![body_tag.png](./media/colors.png)
+
+> The `border` attribute recieves tree values `value style color`.
+
+### RGB colors
+
+Example:
+
+```html
+color: rgb(255, 0, 0)
+```
+
+### RGBA colors
+
+`RGBA` is an extension of RGB color values with an Alpha channel, this channel represents the opacity for a color.
+
+An alpha parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque)
+
+Example:
+
+```html
+color: rgba(255, 0, 0, 0.5)
+```
+
+### HEX colors
+
+Specified with #RRGGBB
+
+> `FF` hex to dec is 255
+
+## Image float
+
+As any other element, `img` can have multiple attributes, e.g. `src`, `alt`, `width`, `height`, etc.
+
+Another useful **style** attribute is `float`, it lets the image float to the right or to the left of text (rememeber that images are inline-block elements).
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Block elements</title>
+  </head>
+  <body>
+    <div style="background: red">Hello <b>world</b> how are you</div>
+
+    <div style="background: green">
+      Hello <b style="background: blue">world</b> how are you
+    </div>
+  </body>
+</html>
+```
+
+> See example above at [codes/float.html](./codes/float.html)
+
+This is how it looks in the browser:
+
+![body_tag.png](./media/float.png)
+
+> Learn more about `float` at [https://developer.mozilla.org/en-US/docs/Web/CSS/float](https://developer.mozilla.org/en-US/docs/Web/CSS/float)
+
+**IMPORTANT** (kinda): you can insert `.gif` images not only `.png` images.
+
+## Image maps
+
+Image maps defines an image with clickable areas, the idea is that you should be able to perform actions dependinf where in the image you click.
+
+## Lists
+
+HTML lists are used to specify lists of information.
+
+There are three different types of lists:
+
+- Ordered lists: These are numbered lists.
+- Unordered lists: Each element has a bullet insted of a number.
+- Description lists: List of terms with a **description** of each of them.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>lists</title>
+  </head>
+  <body>
+    <h2>Ordered lists</h2>
+    <ol>
+      <li>first</li>
+      <li>second</li>
+      <li>third</li>
+    </ol>
+
+    <h2>Unordered lists</h2>
+    <ul>
+      <li>sugar</li>
+      <li>soda</li>
+      <li>coffee</li>
+      <li>milk</li>
+    </ul>
+
+    <h2>Description lists</h2>
+    <dl>
+      <dt>Dogs</dt>
+      <dd>the bests fiends</dd>
+      <dt>Cats</dt>
+      <dd>the most agiles</dd>
+      <dt>Robots</dt>
+      <dd>not the best friends nor agiles, yet</dd>
+    </dl>
+  </body>
+</html>
+```
+
+> See example above at [codes/lists.html](./codes/lists.html)
+
+This is how it looks in the browser:
+
+![body_tag.png](./media/lists.png)
+
+### Nested lists
+
+You can place a lists inse another list.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>nested lists</title>
+  </head>
+  <body>
+    <ol>
+      <li> <!-- item of ordered list-->
+        <p>BOYS</p>
+        <ul> <!-- nested unordered list -->
+          <li>Noe</li>
+          <li>Pedro</li>
+          <li>Juan</li>
+          <li>Ernesto</li>
+        </ul>
+      </li>
+
+      <li> <!-- item of ordered list-->
+        <p>GIRLS</p>
+        <ul> <!-- nested unordered list -->
+          <li>Andrea</li>
+          <li>Pedrilla</li>
+          <li>Juanilla</li>
+          <li>Ernestina</li>
+        </ul>
+      </li>
+
+      <li> <!-- item of ordered list-->
+        <p>PETS</p>
+        <ul> <!-- nested unordered list -->
+          <li>dog</li>
+          <li>cat</li>
+        </ul>
+      </li>
+    </ol>
+  </body>
+</html>
+```
+
+> See example above at [codes/nested_lists.html](./codes/nested_lists.html)
+
+This is how it looks in the browser:
+
+![body_tag.png](./media/nested_lists.png)
