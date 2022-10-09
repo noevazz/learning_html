@@ -876,7 +876,109 @@ This is how it looks in the browser:
 
 ## Image maps
 
-Image maps defines an image with clickable areas, the idea is that you should be able to perform actions dependinf where in the image you click.
+Image maps defines an image with clickable areas, the idea is that you should be able to perform actions depending where in the image you click.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>image maps</title>
+  </head>
+  <body>
+    <img
+      src="../media/cat.png"
+      alt="alt here"
+      usemap="#workmap"
+      width="250"
+      height="200"
+    />
+    <map name="workmap">
+      <area
+        shape="rect"
+        coords="0,0, 30, 150"
+        href="https://thecatsite.com"
+        onclick="alert('meow')"
+        title="visit thecatsite.com"
+      />
+    </map>
+  </body>
+</html>
+```
+
+> See example above at [codes/image_maps1.html](./codes/image_maps1.html)
+
+> `href` and `onclick` attributes are optionals but useful.
+
+> The `onclick` attribute can call a `Javascript` function, this time we are calling the `alert` function with the message `meow`, the alert function pop up a window with the message.
+
+This is how it looks in the browser:
+
+![image_maps1.png](./media/image_maps1.png)
+
+Then if you click in the area:
+
+![image_maps2.png](./media/image_maps2.png)
+
+After clicking on accept or esc:
+
+![image_maps2.png](./media/image_maps3.png)
+
+The shape takes one of these values:
+
+- `rect`: defines a rectangle
+- `circle`: defines a circle
+- `poly`: defines a polygonal figure
+- `default`: convers the entire region
+
+`<map>` and `<area>` tags themselves are already transparent, in fact, `<map>` isn't visualized at all; it just defines the hover/click areas for the image/svg element that uses this particular map.
+
+If you want areas to be "colored", you need to recolor the underlying image or use external libraries.
+
+## Background images
+
+Images can be specified for almost any HTML element as the background.
+
+Syntax:
+
+```html
+background-image: url(path here)
+```
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Background Images</title>
+  </head>
+  <body>
+    <p>Let's use the following image as the background-image:</p>
+    <img src="../media/tile.png" />
+    <div style="background-image: url(../media/tile.png); color: white">
+      RANDOM TEXT: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Aliquam optio totam velit, veritatis omnis necessitatibus quae quasi
+      inventore vitae magni molestias dolorum minima porro, suscipit dolore
+      dicta deserunt? Libero, officiis? Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Fuga autem, labore reprehenderit amet excepturi debitis
+      ad? Facere quaerat neque quod? Voluptatum non quis quos quibusdam illum
+      blanditiis. Laboriosam, cum at.
+    </div>
+  </body>
+</html>
+```
+
+> See example above at [codes/background_images.html](./codes/background_images.html)
+
+This is how it looks in the browser:
+
+![background_images.png](./media/background_images.png)
+
+By default the image repeats itself horizontally and vertically. You can change this behavior by setting the `brackground-repeat` style attribute, learn more at [https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat](https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat)
 
 ## Lists
 
@@ -983,4 +1085,208 @@ Example:
 
 This is how it looks in the browser:
 
-![body_tag.png](./media/nested_lists.png)
+![nested_lists.png](./media/nested_lists.png)
+
+## Picture element
+
+The `picture` element displays different pictures for different devices or screen sizes.
+
+The picture element holds `source` elements which define the image and screen size.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Picture elements</title>
+  </head>
+  <body>
+    <picture>
+      <source media="(min-width: 650px)" srcset="../media/space600x300.png" />
+      <source media="(min-width: 450px)" srcset="../media/volcano400x200.png" />
+      <img src="../media/cat.png" />
+    </picture>
+  </body>
+</html>
+```
+
+> See example above at [codes/picture_elements.html](./codes/picture_elements.html)
+
+This is how it looks in the browser:
+
+![picture_elements.png](./media/picture_elements1.png)
+
+Resizing the window:
+
+![picture_elements.png](./media/picture_elements2.png)
+
+**IMPORTANT**: The `<picture>` element contains one or more `<source>` tags and one `<img>` tag. The `<img>` element is required as the last child of the `<picture>` element, as a fallback option if none of the source tags matches.
+
+## Tables
+
+By default `th` (table header) elements are shown in bold and centered.
+
+`td` (table data) elements have a regular font and are left-aligned.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tables</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Grade</th>
+        </tr>
+        <tr>
+            <td>Noe</td>
+            <td>9.3</td>
+        </tr>
+        <tr>
+            <td>Noelia</td>
+            <td>8.5</td>
+        </tr>
+    </table>
+</body>
+</html>
+```
+
+> See example above at [codes/tables.html](./codes/tables.html)
+
+This is how it looks in the browser:
+
+![tables.png](./media/tables.png)
+
+## STYLE element
+
+The `style` element hold CSS code for styling.
+
+CSS adds styles for a given selector. A selector can be an HTML element, its children, or a group of elements.
+
+Using this element inside a HTML file is known as internal or embedded CSS.
+
+Syntax:
+
+```
+element {
+  attribute1: value;
+  attribute2: value;
+  attributeN: value;
+}
+
+element2 {
+  attribute1: value;
+  attribute2: value;
+  attributeN: value;
+}
+```
+
+Unless you are very specific, CSS will add the styles to all of the element, e.g. `p{color: red;}` will make ALL `p` elements's font red.
+
+The `style` element is usually place in the `head`.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Style element</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        table {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Grade</th>
+        </tr>
+        <tr>
+            <td>Noe</td>
+            <td>9.3</td>
+        </tr>
+        <tr>
+            <td>Noelia</td>
+            <td>8.5</td>
+        </tr>
+    </table>
+</body>
+</html>
+```
+
+> See example above at [codes/style_element.html](./codes/style_element.html)
+
+This is how it looks in the browser:
+
+![style_element.png](./media/style_element.png)
+
+## More about tables
+
+You can "merge" 2 colums by using the `colspan` attribute in a `td` or `th` element, example: `<td colspan="2">content</td>`.
+
+In the other hand, if you want a cell span more that one row, use the `rowspan` attribute.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table span</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        table {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th colspan="2">Grades</th>
+        </tr>
+        <tr>
+            <td>Noe</td>
+            <td>9.3</td>
+            <td>8.9</td>
+        </tr>
+        <tr>
+            <td>Noelia</td>
+            <td>8.5</td>
+            <td rowspan="2">10</td>
+        </tr>
+        <tr>
+            <td>Pedro</td>
+            <td>7.3</td>
+        </tr>
+    </table>
+</body>
+</html>
+```
+
+> See example above at [codes/table_span.html](./codes/table_span.html)
+
+This is how it looks in the browser:
+
+![table_span.png](./media/table_span.png)
+
