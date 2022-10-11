@@ -1308,11 +1308,99 @@ This is how it looks in the browser:
 
 ![table_span.png](./media/table_span.png)
 
+## Class attribute
+
+The 'class' attribute is used to specify a class for an HTML element, multiple HTML elements can share the same class. The class can be used by Javascript or CSS to add styles or behaviour to the elements that have the class.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class attribute</title>
+    <style>
+        .my_custom_font {
+            color: white;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .red_bkg {
+            background-color: red;
+        }
+        .big_font {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <p class="red_bkg my_custom_font">Hello world</p>
+    <p class="big_font">Hello world</p>
+    <p class="red_bkg big_font">Hello world</p>
+</body>
+</html>
+```
+
+> See example above at [codes/class_attribute.html](./codes/class_attribute.html)
+
+This is how it looks in the browser:
+
+![class_attribute.png](./media/class_attribute.png)
+
+> Note that an element can have multiple classes, then you can add styles to each class, the syntax of the selector was a dot along with the name of the class (dot notation) then add the styles between curly brackets.
+
+
+## ID attribute
+
+The `id` attribute is used to add a unique id to an HTML element, you cannot have more that one element with the same `id`.
+
+CSS and Js can also use this ID to add styles and behaviours.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+        <title>id attribute</title>
+    <style>
+      * {
+        background-color: rgb(16, 52, 172);
+        padding: 0 auto;
+        margin: 0;
+        /* The margin property controls the space
+        outside an element, and the padding property
+        controls the space inside an element.*/
+      }
+      #heading_1 {
+        color: aqua;
+        background-color: black;
+        font-weight: bolder;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="heading_1">HELLO WORLD</h1>
+  </body>
+</html>
+
+```
+
+> See example above at [codes/id_attribute.html](./codes/id_attribute.html)
+
+This is how it looks in the browser:
+
+![id_attribute.png](./media/id_attribute.png)
+
 ## Iframes
 
 Iframes are used to display a nested webpage.
 
-Syntax:
+Example:
 
 ```html
 <!DOCTYPE html>
@@ -1352,3 +1440,108 @@ And when you click in the link:
 If you are curious about how the browser handle this, check the inspector in the browser, here you can see that in fact the iframe contains another document:
 
 ![iframes3.png](./media/iframes3.png)
+
+
+## Universal selector
+
+The asterisk (`*`) is known as the CSS universal selectors. It can be used to select any and all types of elements in an HTML page. 
+
+```html
+* {
+  background-color: rgb(16, 52, 172);
+  padding: 0 auto;
+  margin: 0;
+}
+```
+
+> This is a fragment from [codes/id_attribute.html](./codes/id_attribute.html)
+
+> In CSS, a `margin` is the space around an element’s border, while `padding` is the space between an element’s border and the element’s content.
+
+## HTML with JAVASCRIPT
+
+You can use Js to add behaviours to a web page. Javascript can be embedded in HTML using the `<script>` element, just as the `<style>` element for CSS. Js can be also be linked as an external resource: `<script src="path/to/file.js"></script>` (**when using the src attribute the content of the script element is ignored because the file is loaded instead**).
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html with js</title>
+</head>
+<body>
+    <p id="myparagraph">Hello</p>
+    <script>
+        let p = document.getElementById("myparagraph");
+        p.innerHTML = "I changed the text :)"
+    </script>
+</body>
+</html>
+```
+
+> See example above at [codes/html_with_js.html](./codes/html_with_js.html)
+
+This is how it looks in the browser:
+
+![html_with_js.png](./media/html_with_js.png)
+
+In this example the Js code stores the reference of the element whose id is `myparagraph` in the `p` variable, then it use the `innerHTML` attribute to sets the HTML content of the element.
+
+JS code is automatically loaded and executed that's why you immediately see the text changed.
+
+> This is a HTML tutorial so do not worry to much for Js, not yet.
+
+## Responsive Web Design
+
+RWD is about creating we pages that look good on all devices. Adjust for different screen sizes and viewports.
+
+Here are a few things you need to start doing if you want your page to be responsive:
+
+- Add a `meta` tag to let the browser know how it will control the page's dimensions and scalling. Syntax: `<meta name="viewport" content="width=device-width",s initial-scale=1.0>`
+- Responsive images: you can set the width of an image to 100%, this means the width will be the same as the full length of the width, it doesn't matter how much is it, the image browser will calculate that for us, syntax: `<img src="path/to/image" style="width: 100%;">`. You can also use the `max-width` style property, this property scales the image down if required but it never scales up to be larger that the max width specified, syntax: `<img src="path/to/image" style="max-width: 50%; height: auto;">` (50% is just a random value to explain the syntax).
+- Add **media queries**: this are a way to add different styles to elements for different browser sizes. Here is an example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media queries</title>
+    <style>
+        body {
+                background-color: red;
+        }
+        @media only screen and (max-width: 600px) {
+            body {
+                background-color: green;
+            }
+        }
+        @media only screen and (max-width: 500px) {
+            body {
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+```
+
+> See example above at [codes/media_queries.html](./codes/media_queries.html)
+
+This is how it looks in the browser:
+
+![media_queries1.png](./media/media_queries1.png)
+
+Scaling down the window:
+
+![media_queries2.png](./media/media_queries2.png)
+
+Scaling down one more time:
+
+![media_queries3.png](./media/media_queries3.png)
