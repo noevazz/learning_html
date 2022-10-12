@@ -137,6 +137,24 @@ This is how it looks in the browser:
 - Note the name of the tab, that was caused by the `title` tag. This tag is important for Search Engine Optimization (SEO).
 - Note the `é` in `México`, we were able to see that symbol because we use `<meta charset="UTF-8">`, the `meta` tag defines metadata, in can have multiple attributes, this time we use `charset` to set the character encoding to `UTF-8` so we can see the letter `é`.
 
+## File paths
+
+When working with HTML you will need to refer to files in your directory. For example, you can have a menu with links to these files about.html, contact.html, blog.html, etc. what is the path for these files?
+
+The path of these files is the address in the file structure, this address can be relative or absolute:
+
+- **Relative**: If you want to refer to a file that is in the same directory of the current file then you can use `./otherfile.html`, here the dot means "current directory". this also works if the file is inside another directory: `./directory2/otherfile.html` this is looking for a directory called `directory2` inside the current directory and then it looks for the file `otherfile.html` within it.
+  - Another relative way is using `..`, here the two dots mean "the parent directory of the current directory", let's say you have tis structure:
+  ```
+  myproject
+  |-- dir1
+  |   `-- index.html
+  `-- dir2
+      `-- about.html
+  ```
+  If you have opened index.html and you want to open about.html then the path will be `../dir2/about.html` because `..` is the parent of `dir1` that is `myproject`, then we can add the rest of the path: `myproject/dir2/about.html`.
+- **Absolute**: When you specify the whole path. If you are in windows you will most likely start with `C:\`, Mac and Linux will start with `/`, for example, the absolute path of `about.html` in my computer is `/home/noe/myproject/dir2/about.html`, as you can see absolute paths have the full address in your system. If you send your project yo a friend it is very likely that the links will not work because the absolute path will be different, that's why relative files are useful.
+
 ## Body tag
 
 The `body` tag defines the document's body, it contains all the HTML elements e.g. paragraphs, links, images, tables, etc.
@@ -1346,7 +1364,7 @@ Example:
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>id attribute</title>
+        <title>id attribute</title>
     <style>
       * {
         background-color: rgb(16, 52, 172);
@@ -1378,6 +1396,52 @@ This is how it looks in the browser:
 
 ![id_attribute.png](./media/id_attribute.png)
 
+## Iframes
+
+Iframes are used to display a nested webpage.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iframes</title>
+  </head>
+  <body>
+    <h1>iframe</h1>
+
+    <iframe
+      name="mycuteiframe"
+      src="https://en.wikipedia.org/wiki/HTML"
+      width="750"
+      height="300"
+    ></iframe>
+    
+    <!-- You can open a different page using an "a" tag that points to the iframe name, see next line: -->
+    <p><a href="./colors.html" target="mycuteiframe">open colors.html</a></p>
+  </body>
+</html>
+```
+> `name`, `width`, and `height` are optional attributes but useful.
+
+> See example above at [codes/iframes.html](./codes/iframes.html)
+
+This is how it looks in the browser:
+
+![iframes1.png](./media/iframes1.png)
+
+And when you click in the link:
+
+![iframes2.png](./media/iframes2.png)
+
+If you are curious about how the browser handle this, check the inspector in the browser, here you can see that in fact the iframe contains another document:
+
+![iframes3.png](./media/iframes3.png)
+
+
 ## Universal selector
 
 The asterisk (`*`) is known as the CSS universal selectors. It can be used to select any and all types of elements in an HTML page. 
@@ -1390,7 +1454,7 @@ The asterisk (`*`) is known as the CSS universal selectors. It can be used to se
 }
 ```
 
-> See example above at [codes/id_attribute.html](./codes/id_attribute.html)
+> This is a fragment from [codes/id_attribute.html](./codes/id_attribute.html)
 
 > In CSS, a `margin` is the space around an element’s border, while `padding` is the space between an element’s border and the element’s content.
 
@@ -1481,6 +1545,7 @@ Scaling down the window:
 Scaling down one more time:
 
 ![media_queries3.png](./media/media_queries3.png)
+<<<<<<< HEAD
 
 ## Layout elements
 
@@ -1506,3 +1571,5 @@ Example:
 
 
 
+=======
+>>>>>>> 8757814243dc929b3e793b903a2c4f9df427d966
