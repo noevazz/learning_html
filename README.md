@@ -1482,3 +1482,27 @@ Scaling down one more time:
 
 ![media_queries3.png](./media/media_queries3.png)
 
+## Layout elements
+
+Layout provides a way to arrange web pages in well-mannered, well-structured, and in responsive form.
+
+HTML has several semantic elements that defines the parts of a web page:
+
+- `<header>`: used to created the header section of web pages.
+- `<nav>`: container for the main block of navigation links.
+- `<section>`: represent a separate section of a web page.
+- `<article>`
+- `<aside>`
+- `<footer>`: defines the footer for the web page.
+- `<summary>`> used with the `<details>` element. It holds camptions about the content of `<details>` element.
+
+![layout.png](./media/layout.png)
+
+Example:
+
+![layout.gif](./media/layout.gif)
+
+> See the code of example above at [codes/layout.html](./codes/layout.html)
+
+
+
