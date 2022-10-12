@@ -1545,7 +1545,6 @@ Scaling down the window:
 Scaling down one more time:
 
 ![media_queries3.png](./media/media_queries3.png)
-<<<<<<< HEAD
 
 ## Layout elements
 
@@ -1571,5 +1570,3 @@ Example:
 
 
 
-=======
->>>>>>> 8757814243dc929b3e793b903a2c4f9df427d966
