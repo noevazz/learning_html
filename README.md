@@ -136,6 +136,7 @@ This is how it looks in the browser:
 
 - Note the name of the tab, that was caused by the `title` tag. This tag is important for Search Engine Optimization (SEO).
 - Note the `é` in `México`, we were able to see that symbol because we use `<meta charset="UTF-8">`, the `meta` tag defines metadata, in can have multiple attributes, this time we use `charset` to set the character encoding to `UTF-8` so we can see the letter `é`.
+- Emojis are part of UTF-8 (unicode)
 
 ## File paths
 
@@ -1555,7 +1556,7 @@ HTML has several semantic elements that defines the parts of a web page:
 - `<header>`: used to created the header section of web pages.
 - `<nav>`: container for the main block of navigation links.
 - `<section>`: represent a separate section of a web page.
-- `<article>`
+- `<article>`: defines article content, it can be used to represent a post, newspaper article, or a big story.
 - `<aside>`
 - `<footer>`: defines the footer for the web page.
 - `<summary>`> used with the `<details>` element. It holds camptions about the content of `<details>` element.
@@ -1568,5 +1569,42 @@ Example:
 
 > See the code of example above at [codes/layout.html](./codes/layout.html)
 
+## Meta tag
 
+The `meta` tag is used to represent metadata about a HTML document.
 
+Examples:
+
+```html
+<meta charset="UTF-8" />
+<meta name="keywords" content="HTML, CSS, JS" />
+<meta name="description" content="learn HTML for free" />
+<meta name="author" content="Noe Vaz" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+```
+
+## HTML conventions
+
+Use the following convention as much as possible to create clean and readable HTML documents:
+
+- Use lowercase to for element names, `<IMG>` is fine, but `<img>` is better for readability and also is easier to write.
+- Close all HTML elements, this is not mandatory but is a goog practice.
+- Quote attribute values, HTML allows you to write attribute values without quotes because is easier to read, in the case your value has spaces you MUST use quotes.
+- Always specify `alt`, `width`, and `height` for images, this reduce flickering because the browser can reserves space.
+- Only add blank lines and indentation when needed, e.g. separate large or logical code blocks. For indentation use 2 spaces instead of the tab key.
+
+## HTML entities
+
+Entities are used to display reserved characters, e.g. the characters `<` and `>` can be confused with a tag.
+
+Entities start with an ampersand `&` and ends with a semicolon `;`
+
+You can use HTML entities by their name or using their numeric value.
+
+Common entities:
+
+- For `<` use `&lt;`
+- For `>` use `&gt;`
+- For `&` use `&amp;`
+- For `"` use `&quot;`
+- For `'` use `&apos;`
