@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forms input types</title>
+    </head>
+    <body>
+
+        <form action="" method="GET">
+            text:
+            <input type="text" name="username" placeholder="noe vaz">
+            <br>
+
+            <p>Select your favorite languange</p>
+            <label for="option1">HTML</label>
+            <input id="option1" type="radio" name="favlanguage" value="HTML">
+
+            <label for="option2">CSS</label>
+            <input id="option2" type="radio" name="favlanguage" value="CSS">
+            
+            <label for="option3">JS</label>
+            <input id="option3" type="radio" name="favlanguage" value="JS" checked>
+
+            <br>
+            <label for="mycheckbox">Are you +18?:</label>
+            <input type="checkbox" id="mycheckbox" name="adult" checked>
+
+            <br>
+            button:
+            <input type="button" value="my cute button" onclick="alert('Hi!')">
+
+            <br>
+            submit:
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+</html>

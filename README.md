@@ -1547,6 +1547,8 @@ Scaling down one more time:
 
 ![media_queries3.png](./media/media_queries3.png)
 
+> Responsive Web Design will be explored more in the CSS tutorial.
+
 ## Layout elements
 
 Layout provides a way to arrange web pages in well-mannered, well-structured, and in responsive form.
@@ -1608,3 +1610,219 @@ Common entities:
 - For `&` use `&amp;`
 - For `"` use `&quot;`
 - For `'` use `&apos;`
+
+## Forms
+
+Forms are used to collect user's input.
+
+Syntax:
+
+```html
+<form action="Server URL" method="get|post">
+  <!-- Input elements here -->
+</form>
+```
+
+### Action attribute on form element
+
+The `action` attribute defines the process to be perform when the form is submitted.
+
+### Input elements
+
+The `input` element is the most used element for user input. It can be displayed in variety of ways depending on the value of the type attribute.
+
+Input types:
+
+Type 	Description
+- `<input type="text">`:	Displays a single-line text input field. The default width is 20 characters.
+- `<input type="radio">`:	Displays a radio button (for selecting one - of many choices). For a group of radio buttons use the same value for the `name` attribute in all radio buttons.
+- `<input type="checkbox">`:Displays a checkbox (for selecting zero or more of many choices)
+- `<input type="submit">`:Displays a submit button (for submitting the form)
+- `<input type="button">`:Displays a clickable button
+
+Example:
+
+The `<input type="submit">` defines a button for submitting the form data to a form-handler. The form-handler is specified in the form's action attribute.
+
+This is how it looks in the browser:
+
+![forms_input_types.png](./media/forms_input_types.png)
+
+> See example above at [codes/forms_input_types.html](./codes/forms_input_types.html)
+
+The `label` element defines a tag for may form elements, it is useful for screen-reader users. It is also useful for user with difficult to click on very small regions.
+
+Syntax:
+
+```html
+<label for="id_of_the_input">text here</label>
+<input type="type_goes_here" id="id_of_the_input">
+```
+
+## Name attribute on input elements
+
+The `name` attribute is very important, when the use submits the form it will send a list of key-value pairs, the key will be the value of the `name` attribute and the value will be the text (for text type), if the checkbox was checked, the value of the `value` attribute (for radio type).
+
+### Method attribute on form element
+
+The `method` attribute specifies how to send form-data (the form-data is sent to the page specified in the action attribute).
+
+The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
+
+Get is the default value.
+
+Notes on GET:
+
+- Appends form-data into the URL in name/value pairs
+- The length of a URL is limited (about 3000 characters)
+- Never use GET to send sensitive data! (will be visible in the URL)
+- Useful for form submissions where a user wants to bookmark the result
+- GET is better for non-secure data, like query strings in Google
+
+Notes on POST:
+
+- Appends form-data inside the body of the HTTP request (data is not shown in URL)
+- Has no size limitations
+- Form submissions with POST cannot be bookmarked
+
+### target attrbute on form element
+
+The `target` attribute specifies where to open the response anter submitting the form.
+
+These are the options:
+
+- `_blank`: new window or tab
+- `_self`: same page
+- `_parent`: parent frame
+- `_top`: in the full body of the window
+- `frame`: response is shown in a named frame
+
+### Novalidate attribute on form element
+
+This attribute instruct the form to not do any validation priot to form submittion.
+
+Syntax:
+
+```html
+<form action="" method="" novalidate>
+</form>
+```
+
+`novalidate` is an atribute that was added in HTML5.
+
+### Other form elements
+
+- `select`: Defines a dropdown list:
+
+```html
+<select name="languages">
+  <option value="HTML">HTML</option>
+  <option value="CSS">CSS</option>
+  <option value="JS">JS</option>
+</select>
+```
+
+- `textarea`: Defines a multile input field.
+
+```html
+<textarea name="thetext" rows="10" cols="30">insert default text if needed</textarea>
+```
+
+- `button`: defines a vlivkable button.
+
+```html
+<button onclick="">text here</button>
+```
+
+The `onclick` attribute is optional but useful.
+
+- `fieldset` and `legend`: the fieldset element is used to group related data in a form, the legend element provides a caption for the fieldset.
+
+```html
+<fieldset>
+  <legend>Personal data</legend>
+  <!-- insert your related inputs here -->
+</fieldset>
+```
+
+- `datalist`: shows a list of predifines options for an `<input>` element. It is used to provide an "autocomplete" feature for `<input>` elements. The input element must have an attribute `list` which value must be the `id` of the `datalist` element.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>datalist</title>
+    </head>
+    <body>
+        <label for="language">Choose your language from the list:</label>
+        <input list="languageslist" name="language" id="language">
+
+        <datalist id="languageslist">
+            <option value="Javascript"></option>
+            <option value="Java"></option>
+            <option value="C++"></option>
+            <option value="C"></option>
+            <option value="C#"></option>
+            <option value="PHP"></option>
+            <option value="Python"></option>
+        </datalist>
+    </body>
+</html>
+```
+
+> See example above at [codes/datalist.html](./codes/datalist.html)
+
+This is how it looks in the browser:
+
+![datalist.png](./media/datalist.png)
+
+### Readonly attribute on input elements
+
+Input elements with this attribute cannot be modified, however, the user can highlight it and copy the text for it.
+
+```html
+<input type="text" value="text to show" readonly>
+```
+
+### Disabled attribute on input elements
+
+Input elements with this attribute are disabled, the input element will be unsuable, unclickable, **it will NOT be send when submitting the form**.
+
+```html
+<input type="text" value="text to show" disabled>
+```
+
+### Min and max attributes on input elements
+
+`min` and `max` specifies the minimum and maximun values for an input field.
+
+Examples:
+
+```html
+<input type="date" max="2010-12-20" min="200-03-05">
+<input type="number" max="10" min="0">
+```
+
+For `type=number` you can also add the `step` attribute, the step specifies the legal number intervals, e.g. `step="0.5"`.
+
+### Placerholder attribute on input elements
+
+The `placeholder` attribute provides a hint for the user to know the expected data.
+
+Example:
+
+```html
+<input type="text" placeholder="Noe Vaz">
+```
+
+The user will see `Noe Vaz` in the input text but it will be shown in italic and gray color, this means it is just an example of the expected data, this value will not be send.
+
+### required attribute on input elements
+
+The `required` attribute ensures that a input has data bbefore submitting the form. If the input is empty and the user clicks on submitt, a message will appear indicating that an input cannot be empty.
+
+```html
+<input type="text" required>
+```
