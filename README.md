@@ -1826,3 +1826,139 @@ The `required` attribute ensures that a input has data bbefore submitting the fo
 ```html
 <input type="text" required>
 ```
+
+
+## CANVAS
+
+The `canvas` element is used to draw graphics on a web page via Javascript.
+
+Canvas images are not good for scaling.
+
+Example
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+</head>
+<body>
+    <canvas id="mycanvas" width="200" height="100" style="border: 1px solid black;"></canvas>
+
+    <script>
+        let c = document.getElementById("mycanvas");
+        let ctx = c.getContext("2d");
+        ctx.moveTo(0, 0);
+        ctx.lineTo(100, 50);
+        ctx.stroke();
+    </script>
+</body>
+</html>
+```
+
+> See example above at [codes/canvas.html](./codes/canvas.html)
+
+This is how it looks in the browser:
+
+![canvas.png](./media/canvas.png)
+
+## SVG graphics
+
+Scalable Vector Graphics are images that are defined using coordinates, this is good when sclaing a graphic since the image will have a great resolution.
+
+The `svg` element is a container for SVG graphics.
+
+SVG graphics are defined using XML language, which is similar to HTML but more strict.
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG</title>
+</head>
+<body>
+    <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="10" fill="red" />
+    </svg>    
+</body>
+</html>
+```
+
+> See example above at [codes/svg.html](./codes/svg.html)
+
+This is how it looks in the browser:
+
+![svg.png](./media/svg.png)
+
+## HTML media
+
+MP4, WebM, and Ogg formats are supported by HTML.
+
+For .swf and flv a plugin is usually needed.
+
+For audio, MP3, WAV and OGG audio are supported.
+
+### Insert video
+
+```html
+<video width="320" height="240" controls>
+  <source src="path/to/the/video.mp4" type="video/mp4">
+</video>
+```
+
+### Insert audio
+
+```html
+<audio src="path/to/audio.mp3" controls></audio>
+```
+
+## HTML plug-ins
+
+Plugins are computer programs that extend the browser functionality.
+
+The `object` element (supported by all browsers) defines an embedded object within an HTML document, it is designed to embed plug-ins like Java applets, PDF readers, and Flash players, it can also include HTML in HTML.
+
+The `embed` element defines an embeded object within an HTML document, however the `<embed>` tag is a deprecated HTML tag. 
+
+Example to display a PDF:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+  </head>
+  <body>
+    <object type="application/pdf"
+            data="data/uploads/media/default/0001/01/540cb75550adf33f281f29132dddd14fded85bfc.pdf"  
+            width="300" 
+            height="200">
+      <a href="/uploads/media/default/0001/01/540cb75550adf33f281f29132dddd14fded85bfc.pdf">download pdf</a>
+    </object>
+  </body>
+</html>
+```
+
+Example of including a video from youtube:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+  </head>
+  <body>
+    <p>Steve Jobs' Stanford Commencement Address - YouTube</p>
+    <object width="320" height="240" data="https://www.youtube.com/embed/bZNEB_o3Hzw?ecver=2">
+    </object>
+  </body>
+</html>
+```
+
+> These examples were taken from [https://www.w3docs.com/snippets/html/which-tag-is-better-to-use-embed-or-object.html](https://www.w3docs.com/snippets/html/which-tag-is-better-to-use-embed-or-object.html)
